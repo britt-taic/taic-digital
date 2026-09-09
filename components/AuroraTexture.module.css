@@ -1,0 +1,86 @@
+.aurora {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  width: 58%;
+  padding-top: 58%;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.75;
+  mix-blend-mode: screen;
+}
+.blobA {
+  background: radial-gradient(circle, var(--slate), transparent 70%);
+  top: -22%;
+  left: -12%;
+  animation: driftA 22s ease-in-out infinite alternate;
+}
+.blobB {
+  background: radial-gradient(circle, var(--sand), transparent 70%);
+  top: 6%;
+  right: -18%;
+  width: 46%;
+  padding-top: 46%;
+  animation: driftB 27s ease-in-out infinite alternate;
+}
+.blobC {
+  background: radial-gradient(circle, var(--mist-2), transparent 70%);
+  bottom: -26%;
+  left: 22%;
+  opacity: 0.45;
+  animation: driftC 30s ease-in-out infinite alternate;
+}
+.blobD {
+  background: radial-gradient(circle, var(--slate), transparent 70%);
+  bottom: -16%;
+  right: 8%;
+  width: 42%;
+  padding-top: 42%;
+  animation: driftD 24s ease-in-out infinite alternate;
+}
+
+@keyframes driftA {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(9%, 8%) scale(1.18);
+  }
+}
+@keyframes driftB {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-10%, 10%) scale(1.1);
+  }
+}
+@keyframes driftC {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(6%, -9%) scale(1.15);
+  }
+}
+@keyframes driftD {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-8%, -6%) scale(1.2);
+  }
+}
+
+/* Smaller containers (e.g. the About portrait's back card) need a much
+   tighter blur radius — the hero's 72px blur reads as a flat wash once the
+   box is a few hundred px square instead of 700px+ wide. */
+.compact .blob {
+  filter: blur(26px);
+}

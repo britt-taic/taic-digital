@@ -1,5 +1,5 @@
 import styles from "./About.module.css";
-import Placeholder from "./Placeholder";
+import AuroraTexture from "./AuroraTexture";
 
 export default function About() {
   return (
@@ -14,8 +14,8 @@ export default function About() {
             />
 
             <div className={styles.stack}>
-              <div data-handoff="about-animation-target" className={styles.backCard}>
-                <Placeholder label="Rope texture / animation" variant="navy-2" />
+              <div className={styles.backCard}>
+                <AuroraTexture compact />
               </div>
               <div className={styles.frontCard}>
                 <img

@@ -13,27 +13,9 @@
   margin: 0 auto;
 }
 
-/* HANDOFF: this panel's background-color / background-image is a placeholder
-   for Britt's separately-built CSS animation (an animated texture fills the
-   panel edge to edge, clipped by the border-radius). Keep the box, radius,
-   min-height and the centred H1 as-is when swapping it in — the H1 must stay
-   above the animation layer and legible in cream; add a scrim if the
-   animation runs light. */
 .panel {
   position: relative;
-  background-color: var(--slate);
-  background-image: radial-gradient(
-      90% 80% at 12% 88%,
-      rgba(176, 168, 152, 0.22) 0%,
-      rgba(74, 96, 128, 0) 62%
-    ),
-    repeating-linear-gradient(
-      112deg,
-      rgba(250, 247, 242, 0.03) 0px,
-      rgba(250, 247, 242, 0.03) 1px,
-      rgba(250, 247, 242, 0) 1px,
-      rgba(250, 247, 242, 0) 8px
-    );
+  background-color: var(--navy-3);
   border-radius: 22px;
   overflow: hidden;
   min-height: 520px;
@@ -50,6 +32,8 @@
 }
 
 .headline {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-serif);
   font-weight: 400;
   font-style: italic;

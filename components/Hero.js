@@ -1,11 +1,13 @@
 import styles from "./Hero.module.css";
 import Placeholder from "./Placeholder";
+import AuroraTexture from "./AuroraTexture";
 
 export default function Hero() {
   return (
     <section id="top" style={{ background: "var(--mist)" }} className={styles.hero}>
       <div className={styles.container}>
-        <div data-handoff="hero-animation-target" className={styles.panel}>
+        <div className={styles.panel}>
+          <AuroraTexture />
           <h1 className={styles.headline}>
             Fractional digital marketing support for your business.
           </h1>
