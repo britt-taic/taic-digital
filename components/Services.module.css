@@ -74,10 +74,19 @@
   border: 0;
   text-align: left;
   font: inherit;
-  transition: flex-grow 520ms cubic-bezier(0.4, 0, 0.2, 1), background 320ms;
+  transition: flex-grow 520ms cubic-bezier(0.4, 0, 0.2, 1),
+    flex-basis 260ms cubic-bezier(0.4, 0, 0.2, 1), background 320ms,
+    box-shadow 260ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .panel.active {
   flex: 1 1 auto;
+}
+@media (hover: hover) and (pointer: fine) {
+  .panel:not(.active):hover {
+    flex-basis: 90px;
+    background: #ffffff;
+    box-shadow: 0 16px 32px rgba(30, 45, 64, 0.12);
+  }
 }
 @media (max-width: 900px) {
   .panel {
