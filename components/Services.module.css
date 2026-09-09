@@ -1,0 +1,228 @@
+.section {
+  background: var(--mist);
+  padding: 120px 56px;
+}
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 22px;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.headRow {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+@media (max-width: 900px) {
+  .headRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.eyebrowHeadline {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(44px, 6vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--navy);
+}
+.intro {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--slate);
+  margin: 0;
+  max-width: 54ch;
+  text-wrap: pretty;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  min-height: 560px;
+}
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+}
+
+.panel {
+  position: relative;
+  min-width: 0;
+  height: 640px;
+  background: var(--cream);
+  border-radius: 22px;
+  padding: 26px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 74px;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  transition: flex-grow 520ms cubic-bezier(0.4, 0, 0.2, 1), background 320ms;
+}
+.panel.active {
+  flex: 1 1 auto;
+}
+@media (max-width: 900px) {
+  .panel {
+    height: auto;
+    min-height: 0;
+  }
+}
+
+.vertLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  writing-mode: vertical-rl;
+  transform: translate(-50%, -50%) rotate(180deg);
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--navy);
+  opacity: 1;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.panel.active .vertLabel {
+  opacity: 0;
+}
+@media (max-width: 900px) {
+  .vertLabel {
+    position: static;
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 1;
+  }
+}
+
+.expanded {
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 26px;
+  bottom: 26px;
+  max-height: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.panel.active .expanded {
+  max-height: 1600px;
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .expanded {
+    position: static;
+    inset: auto;
+    overflow-y: hidden;
+    margin-top: 18px;
+  }
+}
+
+.expHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid rgba(30, 45, 64, 0.12);
+  padding-bottom: 18px;
+}
+.expNum {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  line-height: 1;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+.expKind {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.expTitle {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  margin: 26px 0 14px;
+}
+.expDesc {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--slate);
+  margin: 0 0 26px;
+  max-width: 52ch;
+  text-wrap: pretty;
+}
+.includesLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.pill {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--sand);
+  color: var(--navy);
+  white-space: nowrap;
+}
+.scopeRow {
+  border-top: 1px solid rgba(30, 45, 64, 0.12);
+  padding-top: 18px;
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 20px;
+  align-items: baseline;
+}
+.scopeLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.scopeText {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--navy);
+}

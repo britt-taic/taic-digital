@@ -1,0 +1,173 @@
+.hero {
+  background: var(--mist);
+  padding: 190px 40px 96px;
+}
+@media (max-width: 900px) {
+  .hero {
+    padding: 168px 22px 64px;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* HANDOFF: this panel's background-color / background-image is a placeholder
+   for Britt's separately-built CSS animation (an animated texture fills the
+   panel edge to edge, clipped by the border-radius). Keep the box, radius,
+   min-height and the centred H1 as-is when swapping it in — the H1 must stay
+   above the animation layer and legible in cream; add a scrim if the
+   animation runs light. */
+.panel {
+  position: relative;
+  background-color: var(--slate);
+  background-image: radial-gradient(
+      90% 80% at 12% 88%,
+      rgba(176, 168, 152, 0.22) 0%,
+      rgba(74, 96, 128, 0) 62%
+    ),
+    repeating-linear-gradient(
+      112deg,
+      rgba(250, 247, 242, 0.03) 0px,
+      rgba(250, 247, 242, 0.03) 1px,
+      rgba(250, 247, 242, 0) 1px,
+      rgba(250, 247, 242, 0) 8px
+    );
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 40px;
+  animation: tRise 380ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@media (max-width: 900px) {
+  .panel {
+    padding: 96px 22px;
+  }
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(38px, 5vw, 76px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin: 0;
+  max-width: 17ch;
+  text-align: center;
+  text-wrap: pretty;
+  animation: tRise 400ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 120ms;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 48px;
+  align-items: end;
+  margin-top: 64px;
+}
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+  animation: tRise 340ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 200ms;
+}
+.metaItem {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.metaDotItem {
+  composes: metaItem;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sand);
+  animation: tPulse 2400ms ease-in-out infinite;
+}
+
+.intro {
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.7;
+  color: var(--slate);
+  margin: 0;
+  max-width: 58ch;
+  text-wrap: pretty;
+  animation: tRise 340ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 260ms;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  animation: tRise 340ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 320ms;
+}
+.person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: none;
+  background: var(--mist-2);
+  color: var(--slate);
+}
+.personName {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--navy);
+}
+.personRole {
+  font-weight: 300;
+  font-size: 13px;
+  color: var(--muted);
+}
+.ctaBtn {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--navy-2);
+  color: var(--cream);
+  transition: background 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ctaBtn:hover {
+  background: var(--navy);
+  color: var(--cream);
+}
