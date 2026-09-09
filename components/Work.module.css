@@ -73,6 +73,12 @@
 .entryB {
   grid-column: 6 / span 7;
 }
+@media (max-width: 900px) {
+  .entryA,
+  .entryB {
+    grid-column: 1 / -1;
+  }
+}
 
 .top {
   display: grid;
