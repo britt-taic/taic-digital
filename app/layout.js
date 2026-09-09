@@ -28,31 +28,31 @@ export const metadata = {
   icons: {
     icon: "/favicon.png",
   },
-  openGraph: {
-    type: "website",
-    siteName: "Taic Digital",
-    title: "Taic Digital | Fractional Marketing & UX in Halifax, NS",
-    description:
-      "Big agency thinking, small business focus. Taic Digital delivers fractional web strategy, UX/UI, SEO/GEO, paid media, analytics and content support.",
-    url: "https://taicdigital.ca/",
-    locale: "en_CA",
-    // placeholder: replace once there's a real 1200x630 share image
-    images: [{ url: "https://taicdigital.ca/og-image.jpg" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Taic Digital | Fractional Marketing & UX in Halifax, NS",
-    description:
-      "Fractional digital marketing support for small businesses: web strategy, UX/UI design, SEO/GEO, paid media, analytics and content.",
-    // same placeholder as og:image above
-    images: ["https://taicdigital.ca/og-image.jpg"],
-  },
 };
 
+// Rendered as plain <meta> tags (Next.js hoists them into <head>) rather
+// than via metadata.openGraph — that key triggers Next's built-in fallback
+// that auto-generates twitter:* tags from the Open Graph data, which we
+// don't want.
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Taic Digital" />
+        <meta
+          property="og:title"
+          content="Taic Digital | Fractional Marketing & UX in Halifax, NS"
+        />
+        <meta
+          property="og:description"
+          content="Big agency thinking, small business focus. Taic Digital delivers fractional web strategy, UX/UI, SEO/GEO, paid media, analytics and content support."
+        />
+        <meta property="og:url" content="https://taicdigital.ca/" />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:image" content="https://taicdigital.ca/og-image.png" />
+        <meta property="og:image:width" content="2400" />
+        <meta property="og:image:height" content="1260" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
