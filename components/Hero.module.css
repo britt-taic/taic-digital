@@ -27,7 +27,8 @@
 }
 @media (max-width: 900px) {
   .panel {
-    padding: 96px 22px;
+    min-height: 260px;
+    padding: 56px 22px;
   }
 }
 
