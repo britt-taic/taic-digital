@@ -1,5 +1,4 @@
 import styles from "./Hero.module.css";
-import Placeholder from "./Placeholder";
 import AuroraTexture from "./AuroraTexture";
 
 export default function Hero() {
@@ -34,7 +33,11 @@ export default function Hero() {
           <div className={styles.right}>
             <div className={styles.person}>
               <div className={styles.avatar}>
-                <Placeholder label="Photo" shape="circle" variant="mist" />
+                <img
+                  src="/britt-circle.png"
+                  alt="Britt Warren"
+                  className={styles.avatarImg}
+                />
               </div>
               <div>
                 <div className={styles.personName}>Britt Warren</div>
