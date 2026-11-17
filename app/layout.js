@@ -1,4 +1,5 @@
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { structuredData } from "./structured-data";
 
@@ -38,6 +39,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-M4RLW4ZV"
+          strategy="afterInteractive"
+        />
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          `}
+        </Script>
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Taic Digital" />
         <meta
