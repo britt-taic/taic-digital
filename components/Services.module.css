@@ -118,6 +118,7 @@
     position: static;
     writing-mode: horizontal-tb;
     transform: none;
+    white-space: normal;
     margin: 0 auto;
     text-align: center;
     opacity: 1;
